@@ -4,16 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Item {
     private String lineNo;
     private String itemDesc;
-    private String qtyOrdered;
+    private int qtyOrdered;
     private String soldOum;
-    private String pricingQty;
+    private int pricingQty;
     private String pricingOum;
-    private String unitPrice;
-    private String total;
+    private BigDecimal unitPrice;
+    private BigDecimal total;
 }

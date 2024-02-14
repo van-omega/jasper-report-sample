@@ -37,12 +37,12 @@
         </queryString>
         <field name="lineNo" class="java.lang.String"/>
         <field name="itemDesc" class="java.lang.String"/>
-        <field name="qtyOrdered" class="java.lang.String"/>
+        <field name="qtyOrdered" class="java.lang.Integer"/>
         <field name="soldOum" class="java.lang.String"/>
-        <field name="pricingQty" class="java.lang.String"/>
+        <field name="pricingQty" class="java.lang.Integer"/>
         <field name="pricingOum" class="java.lang.String"/>
-        <field name="unitPrice" class="java.lang.String"/>
-        <field name="total" class="java.lang.String"/>
+        <field name="unitPrice" class="java.math.BigDecimal"/>
+        <field name="total" class="java.math.BigDecimal"/>
     </subDataset>
     <parameter name="acctNo" class="java.lang.String"/>
     <parameter name="terms" class="java.lang.String"/>
@@ -61,12 +61,12 @@
     <parameter name="specInstruction" class="java.lang.String"/>
     <parameter name="sendMethod" class="java.lang.String"/>
     <parameter name="enteredBy" class="java.lang.String"/>
-    <parameter name="subtotal" class="java.lang.String"/>
-    <parameter name="addCharges" class="java.lang.String"/>
-    <parameter name="freight" class="java.lang.String"/>
-    <parameter name="discounts" class="java.lang.String"/>
-    <parameter name="tax" class="java.lang.String"/>
-    <parameter name="total" class="java.lang.String"/>
+    <parameter name="subtotal" class="java.math.BigDecimal"/>
+    <parameter name="addCharges" class="java.math.BigDecimal"/>
+    <parameter name="freight" class="java.math.BigDecimal"/>
+    <parameter name="discounts" class="java.math.BigDecimal"/>
+    <parameter name="tax" class="java.math.BigDecimal"/>
+    <parameter name="total" class="java.math.BigDecimal"/>
     <parameter name="itemDataset" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
     <field name="FIRST_NAME" class="java.lang.String"/>
     <field name="LAST_NAME" class="java.lang.String"/>
@@ -771,7 +771,7 @@ O]]></text>
                                 <textElement textAlignment="Right">
                                     <font fontName="SansSerif" size="6"/>
                                 </textElement>
-                                <textFieldExpression><![CDATA[$F{qtyOrdered}]]></textFieldExpression>
+                                <textFieldExpression><![CDATA[$F{qtyOrdered}.toString( )]]></textFieldExpression>
                             </textField>
                         </jr:detailCell>
                     </jr:column>
@@ -1316,7 +1316,7 @@ O]]></text>
                     <textElement textAlignment="Right">
                         <font size="6"/>
                     </textElement>
-                    <textFieldExpression><![CDATA[$P{discounts}]]></textFieldExpression>
+                    <textFieldExpression><![CDATA[$P{tax}]]></textFieldExpression>
                 </textField>
                 <textField>
                     <reportElement x="0" y="60" width="123" height="12" uuid="00008acc-459d-4656-9b5c-6e8a1b430a8e">
